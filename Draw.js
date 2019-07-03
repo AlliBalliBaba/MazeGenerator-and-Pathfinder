@@ -39,19 +39,21 @@ function drawCell(thisCell, shiftX) {
 }
 
 function drawCheck(x, y, shiftX) {
-    cellX = x * gridSizeX + shiftX;
-    cellY = y * gridSizeY;
+    x = x * gridSizeX + shiftX;
+    y = y * gridSizeY;
+
     noStroke();
     fill(22, 204, 0, 100);
-    rect(cellX + shift, cellY + shift, gridSizeX - shift, gridSizeY - shift);
+    rect(x + shift, y + shift, gridSizeX - shift, gridSizeY - shift);
 }
 
-function drawSolution(x, y, shiftX) {
-    cellX = x * gridSizeX + shiftX;
-    cellY = y * gridSizeY;
-    noStroke();
-    fill(256, 0, 0, 100);
-    rect(cellX + shift, cellY + shift, gridSizeX - shift, gridSizeY - shift);
+function drawSolution(x, y, nextX, nextY, shiftX) {
+    x = (x + 0.5) * gridSizeX + shiftX;
+    y = (y + 0.5) * gridSizeY;
+    nextX = (nextX + 0.5) * gridSizeX + shiftX;
+    nextY = (nextY + 0.5) * gridSizeY;
+    stroke(256, 0, 0);
+    line(x, y, nextX, nextY)
 }
 
 function drawIntersection(x, y, shiftX) {
@@ -64,7 +66,7 @@ function drawIntersection(x, y, shiftX) {
 
 function showResult(solver, shiftX) {
     if (solver.current.parent != null) {
-        drawSolution(solver.current.x, solver.current.y, shiftX);
+        drawSolution(solver.current.x, solver.current.y, solver.current.parent.x, solver.current.parent.y, shiftX);
         solver.current = solver.current.parent;
         solver.pathSize++;
         solver.displayPathLength();
