@@ -1,7 +1,7 @@
 # MazeGenerator and Pathfinding algorithms
 A maze generator with 3 different pathfinding algorithms to solve the maze in javascript.
 
-Try it out here:
+Try it out here: https://alliballibaba.github.io/MazeGenerator-and-Pathfinder/
 
 ##The Maze Generator
 The maze generator is an implementation of the **Depth-first Search** algorithm. The alorithm guarantuees, 
