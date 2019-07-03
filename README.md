@@ -23,8 +23,7 @@ to the goal.
 ## The Maze Router Pathfinder
 The Maze Router most resembles an actual person trying to traverse the maze. At every intersection choose the path
 with the smallest distance to the goal. Paths in the maze are explored until a dead end is hit. When a dead end is
-hit, return to the intersection closest to the goal. This algorythm can sometimes be faster than A*, depending on the maze's
-properties
+hit, return to the intersection closest to the goal. This algorythm can be faster than A* in a few cases.
 
 
 
