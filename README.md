@@ -11,8 +11,8 @@ that every cell of the maze is accessible and there is just a single path to the
 paths to the ending I randomly removed walls in the maze.
 
 ## Simple Pathfinder
-The simple pathfinder checks every adjacent cell randomly until it reaches the end. This method is quite
-inefficient, but it most often gives the shortest path, since most cells are explored.
+The simple pathfinder randomly checks all available paths at the same time until it reaches the end. This method is quite
+inefficient, but it most often returns the shortest path, since many cells in the maze are explored.
 
 ## A* Pathfinder
 The A* algorithm stores all adjacent nodes to the current path in a sorted list. The nodes with the lowest f-value 
