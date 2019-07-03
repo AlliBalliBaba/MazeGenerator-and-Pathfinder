@@ -3,6 +3,8 @@ A maze generator with 3 different pathfinding algorithms to solve the maze in ja
 
 Try it out here: https://alliballibaba.github.io/MazeGenerator-and-Pathfinder/
 
+![alt text](https://github.com/AlliBalliBaba/MazeGenerator-and-Pathfinder/edit/master/example.gif)
+
 ##The Maze Generator
 The maze generator is an implementation of the **Depth-first Search** algorithm. The alorithm guarantuees, 
 that every cell of the maze is accessible and there is just a single path to the ending. To create multiple
