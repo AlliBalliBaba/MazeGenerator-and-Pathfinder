@@ -7,8 +7,8 @@ Try it out here: https://alliballibaba.github.io/MazeGenerator-and-Pathfinder/
 
 ## The Maze Generator
 The maze generator is an implementation of the **Depth-first Search** algorithm. The alorithm guarantuees, 
-that every cell of the maze is accessible and there is just a single path to the ending. To create multiple
-paths to the ending I removed walls within the maze at random spots.
+that every cell of the maze is accessible and that there is just a single path to the ending. To create multiple
+paths to the ending, walls are removed within the maze at random spots.
 
 ## The Simple Pathfinder
 The simple pathfinder randomly checks all available paths at the same time until it reaches the end. This method is 
