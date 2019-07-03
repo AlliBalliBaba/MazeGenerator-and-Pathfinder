@@ -30,10 +30,11 @@ class AStarSolver {
             this.current = this.open.shift();
 
             // check neighbor nodes
-            this.checkNeighbors(this.current.x, this.current.y)
+            this.checkNeighbors(this.current.x, this.current.y);
 
             //draw on the canvas
             drawCheck(this.current.x, this.current.y, canvasX + 10);
+            this.displayPathLength();
 
             //check if the goal was reached
             if (this.current.y == this.end.y && this.current.x == this.end.x) {
@@ -80,7 +81,7 @@ class AStarSolver {
     }
 
     displayPathLength() {
-        document.getElementById("length2").innerHTML = "required steps: " + String(this.steps) + " <br> length of path: " + String(this.pathSize);
+        document.getElementById("length2").innerHTML = "steps: " + String(this.steps) + " <br> length of path: " + String(this.pathSize);
     }
 
 

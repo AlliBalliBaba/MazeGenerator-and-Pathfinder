@@ -26,6 +26,7 @@ class MazeRouter {
         if (!this.pathfound) {
             //draw on the canvas
             drawCheck(this.current.x, this.current.y, canvasX * 2 + 20);
+            this.displayPathLength();
 
             // set current node to a neighboring node 
             this.current = this.checkNeighbors(this.current.x, this.current.y)
@@ -99,7 +100,7 @@ class MazeRouter {
     }
 
     displayPathLength() {
-        document.getElementById("length3").innerHTML = "required steps: " + String(this.steps) + " <br> length of path: " + String(this.pathSize);
+        document.getElementById("length3").innerHTML = "steps: " + String(this.steps) + " <br> length of path: " + String(this.pathSize);
     }
 }
 

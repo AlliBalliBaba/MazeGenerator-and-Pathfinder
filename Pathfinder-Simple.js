@@ -29,6 +29,7 @@ class SimpleSolver {
 
             //draw on the canvas
             drawCheck(this.current.x, this.current.y, 0);
+            this.displayPathLength();
 
             //check if the goal was reached
             if (this.current.y == this.end.y && this.current.x == this.end.x) {
@@ -68,7 +69,7 @@ class SimpleSolver {
     }
 
     displayPathLength() {
-        document.getElementById("length1").innerHTML = "required steps: " + String(this.steps) + " <br> length of path: " + String(this.pathSize);
+        document.getElementById("length1").innerHTML = "steps: " + String(this.steps) + " <br> length of path: " + String(this.pathSize);
     }
 
 }
