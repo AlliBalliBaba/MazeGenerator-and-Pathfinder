@@ -1,4 +1,4 @@
-# MazeGenerator and Pathfinding algorithms
+# MazeGenerator with Pathfinding algorithms
 A maze generator with 3 different pathfinding algorithms to solve the maze in javascript.
 
 Try it out here: https://alliballibaba.github.io/MazeGenerator-and-Pathfinder/
