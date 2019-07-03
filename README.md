@@ -16,14 +16,15 @@ quite inefficient, especially on big mazes. It ofen manages to find a shorter pa
 algorythms, since more cells are explored.
 
 ## The A* Pathfinder
-The A* algorithm stores all adjacent nodes to the current path in a sorted list. The nodes with the lowest f-value 
-are explored first. The f-value is simply the sum of the path length from the start to the node and the direct distance 
-to the goal.
+My interpretation of an A* pathfinding algorithm. Adjacent nodes are stored in a sorted list. The nodes with the lowest 
+f-value are explored first, wherethe f-value is simply the sum of the path length from the start to the node and the distance 
+from the node to the goal.
 
 ## The Maze Router Pathfinder
 The Maze Router most resembles an actual person trying to traverse the maze. At every intersection choose the path
 with the smallest distance to the goal. Paths in the maze are explored until a dead end is hit. When a dead end is
-hit, return to the intersection closest to the goal. This algorythm can be faster than A* in a few cases.
+hit, return to the intersection closest to the goal. This algorythm can be faster than A* in a few cases, but will
+usually require more steps to finish the maze.
 
 
 
