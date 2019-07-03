@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js"></script>
+    <script src="./MazeGenerator.js"></script>
+    <script src="./index.js"></script>
+    <script src="./Pathfinder-Simple.js"></script>
+    <script src="./Pathfinder-AStar.js"></script>
+    <script src="./Pathfinder-MazeRouter.js"></script>
+    <script src="./utility.js"></script>
+    <script src="./Draw.js"></script>
+    <title>Maze Pathfinding</title>
+</head>
+
+<body>
+
+
+
+    <div class="slideContainer">
+        <div class="txt">Maze size</div>
+        <input type="range" min="10" max="100" value="40" class="slider" id="sizeSlider">
+    </div>
+    <div class="slideContainer">
+        <div class="txt">Maze complexity</div>
+        <input type="range" min="0" max="100" value="90" class="slider" id="complexitySlider">
+    </div>
+    <div class="slideContainer">
+        <div class="txt">Solving speed</div>
+        <input type="range" min="0" max="100" value="0.5" class="slider" id="speedSlider">
+    </div>
+
+    <div id="buttoncontainer">
+        <button id="generateButton" class="btn" color="white" onClick="createNewMaze()">Generate new maze</button>
+        <button id="solveButton" class="btn" color="white" onClick="startSolver()">Solve maze</button>
+    </div>
+
+    <div id="canvasContainer">
+        <div>
+
+            <span id="title1" class="txt2">Simple</span>
+            <span id="title2" class="txt2">A*</span>
+            <span id="title3" class="txt2">MazeRouter</span>
+
+        </div>
+        <span id="canvas1"></span>
+
+    </div>
+    <div id="info">
+        <span class="txt" id="length1">--:</span>
+        <span class="txt" id="length2">--:</span>
+        <span class="txt" id="length3">--:</span>
+    </div>
+
+</body>
+
+
+
+</html>

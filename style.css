@@ -1,0 +1,75 @@
+.slideContainer {
+    align-content: center;
+    transform: translate(5%, 45%);
+}
+
+.btn {
+    cursor: pointer;
+    height: 40px;
+    background: rgb(255, 136, 0);
+    border-radius: 5px;
+    border: none;
+    color: rgba(255, 255, 255, 0.897);
+    font-family: monospace;
+    font-size: 14px;
+}
+
+.txt {
+    font-family: monospace;
+    font-size: 14px;
+}
+
+.txt2 {
+    font-family: monospace;
+    font-size: 24px;
+}
+
+#canvascontainer {
+    border: 3px solid white;
+    transform: translate(5%, 15%);
+}
+
+#generateButton {
+    position: absolute;
+    transform: translate(170%, -210%);
+}
+
+#solveButton {
+    position: absolute;
+    transform: translate(270%, -90%);
+}
+
+#title {
+    text-align: left;
+    transform: translate(4%, 0%);
+}
+
+#title1 {
+    position: absolute;
+    transform: translate(170%, -100%);
+}
+
+#title2 {
+    position: absolute;
+    transform: translate(2060%, -100%);
+}
+
+#title3 {
+    position: absolute;
+    transform: translate(660%, -100%);
+}
+
+#length1 {
+    position: absolute;
+    transform: translate(80px, 70px);
+}
+
+#length2 {
+    position: absolute;
+    transform: translate(490px, 70px);
+}
+
+#length3 {
+    position: absolute;
+    transform: translate(905px, 70px);
+}
