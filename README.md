@@ -15,8 +15,9 @@ The simple pathfinder checks every adjacent cell randomly until it reaches the e
 inefficient, but it most often gives the shortest path, since most cells are explored.
 
 ## A* Pathfinder
-The A* pathfinder stores all adjacent nodes and explores the nodes with the lowest f-value first. The f-value 
-is simply the sum of the path from the start to the node and the direct distance to the goal.
+The A* algorithm stores all adjacent nodes to the current path in a sorted list. The nodes with the lowest f-value 
+are explored first. The f-value is simply the sum of the path from the start to the node and the direct distance to 
+the goal.
 
 ## Maze Router Pathfinder
 The Maze Router most resembles an actual person trying to traverse the maze. At every intersection choose the path
