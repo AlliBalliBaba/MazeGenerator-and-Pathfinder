@@ -13,7 +13,6 @@ function drawMaze(thisMaze) {
     }
 }
 
-
 function drawCell(thisCell, shiftX) {
     cellX = thisCell.x * gridSizeX + shiftX;
     cellY = thisCell.y * gridSizeY;
@@ -24,7 +23,6 @@ function drawCell(thisCell, shiftX) {
     } else {
         if (!thisCell.left) {
             line(cellX + 1, cellY, cellX + 1, cellY + gridSizeY);
-
         }
         if (!thisCell.right) {
             line(cellX + gridSizeX - 1, cellY, cellX + gridSizeX - 1, cellY + gridSizeY);
@@ -57,11 +55,11 @@ function drawSolution(x, y, nextX, nextY, shiftX) {
 }
 
 function drawIntersection(x, y, shiftX) {
-    cellX = x * gridSizeX + shiftX;
-    cellY = y * gridSizeY;
+    x = x * gridSizeX + shiftX;
+    y = y * gridSizeY;
     noStroke();
     fill(200, 200, 0, 100);
-    rect(cellX + shift, cellY + shift, gridSizeX - shift, gridSizeY - shift);
+    rect(x + shift, y + shift, gridSizeX - shift, gridSizeY - shift);
 }
 
 function showResult(solver, shiftX) {
