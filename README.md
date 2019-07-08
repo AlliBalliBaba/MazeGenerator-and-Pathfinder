@@ -12,7 +12,7 @@ paths to the ending, walls are removed within the maze at random spots.
 
 ## The Simple Pathfinder
 The simple pathfinder randomly checks all available paths at the same time until it reaches the end. This method is 
-quite inefficient, especially on big mazes. It ofen manages to find a shorter path to the goal than the other two
+quite inefficient, especially on big mazes. It often manages to find a shorter path to the goal than the other two
 algorythms, since more cells are explored.
 
 ## The A* Pathfinder
