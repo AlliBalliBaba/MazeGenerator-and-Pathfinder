@@ -17,7 +17,7 @@ algorythms, since more cells are explored.
 
 ## The A* Pathfinder
 My interpretation of an A* pathfinding algorithm. Adjacent nodes are stored in a sorted list. The nodes with the lowest 
-f-value are explored first, wherethe f-value is simply the sum of the path length from the start to the node and the distance 
+f-value are explored first, where the f-value is simply the sum of the path length from the start to the node and the distance 
 from the node to the goal.
 
 ## The Maze Router Pathfinder
