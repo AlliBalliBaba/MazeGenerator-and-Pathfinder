@@ -15,9 +15,10 @@ var solveCounter = 0, solveSpeed = 5, active = false;
 //set up canvas
 function setup() {
     ReadHtmlValues();
-    if(screen.width< canvasX){
-        canvasX=screen.width;
-        canvasY=screen.width;
+    if(screen.width-20< canvasX){
+        console.log(screen.width)
+        canvasX=screen.width-20;
+        canvasY=screen.width-20;
     }
     canvas = createCanvas(canvasX, canvasY);
     canvas.parent('canvas1');
@@ -55,7 +56,6 @@ function createNewMaze() {
 
 function startSolver() {
     let id=document.getElementById("finderselect").value;
-    console.log(id)
     if (id<0){ return; }
     document.getElementById("solveButton").disabled = true;
     pathfinder = new pathfinders[id](mazeStart, currentMaze.endPos);
