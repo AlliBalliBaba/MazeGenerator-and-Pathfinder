@@ -49,6 +49,7 @@ h1{
 
 .box{
     width: 70%;
+    min-width: 520px;
     background-color: rgb(255, 255, 255);
     margin-left: auto;
     margin-right: auto;

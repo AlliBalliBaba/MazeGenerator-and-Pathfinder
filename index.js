@@ -3,7 +3,7 @@ var pathfinder;
 const pathfinders= [SimpleSolver,AStarSolver,MazeRouter];
 
 let canvas;
-const canvasX = 500, canvasY = 500;
+var canvasX = 500, canvasY = 500;
 
 var mazeX = 50, mazeY = 50;
 var mazeStart = 3, mazeComplexity = 300;
@@ -15,6 +15,10 @@ var solveCounter = 0, solveSpeed = 5, active = false;
 //set up canvas
 function setup() {
     ReadHtmlValues();
+    if(screen.width< canvasX){
+        canvasX=screen.width;
+        canvasY=screen.width;
+    }
     canvas = createCanvas(canvasX, canvasY);
     canvas.parent('canvas1');
     background(245);
