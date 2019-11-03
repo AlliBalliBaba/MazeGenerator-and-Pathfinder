@@ -31,7 +31,7 @@
                 <br>
                 
                 <select id="finderselect" class="select-css">
-                    <option value="-1"> Select a Maze Solver </option>
+                    <option value="-1"> ..select a maze solver </option>
                     <option value="0">Simple Diffuse</option>
                     <option value="1">A* Pathfinder</option>
                     <option value="2">Maze Router</option>
@@ -46,12 +46,12 @@
             <div id="canvasContainer" >
                 <span id="canvas1"></span>
 
-                <div class="txt">Solving speed</div>
+                <div class="txt" style="margin-top: 15px;">Solving speed</div>
                 <input type="range" min="0" max="100" value="0.5" class="slider" id="speedSlider">
                 <br>
                 <button id="solveButton" class="btn" color="white" onClick="startSolver()">SOLVE</button>
                 <div id="info">
-                    <span class="txt" id="length">-- <br> -- </span>
+                    <span class="txt" style="font-size: 15px;" id="length">-- <br> -- </span>
                 </div>
             </div>
 
