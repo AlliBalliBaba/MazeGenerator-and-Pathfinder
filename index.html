@@ -19,41 +19,40 @@
 
 <body>
     <h1 class="box">Maze Generator </h1>
-    <div class="box flex">
-            <div class="container">
-                <div class="txt">Maze Size</div>
-                <input type="range" min="10" max="100" value="25" class="slider" id="sizeSlider"
-                    onchange="createNewMaze()">
+    <div class="box flex" style="background: white;">
+        <div class="container">
+            <div class="txt">Maze Size</div>
+            <input type="range" min="10" max="100" value="25" class="slider" id="sizeSlider" onchange="createNewMaze()">
 
-                <div class="txt">Maze Complexity</div>
-                <input type="range" min="60" max="100" value="90" class="slider" id="complexitySlider"
-                    onchange="createNewMaze()">
-                <br>
-                
-                <select id="finderselect" class="select-css">
-                    <option value="-1"> ..select a maze solver </option>
-                    <option value="0">Simple Diffuse</option>
-                    <option value="1">A* Pathfinder</option>
-                    <option value="2">Maze Router</option>
-                </select>
-                <br>
-                <button id="generateButton" class="btn" color="white" onClick="createNewMaze()">GENERATE</button>
-                <br>
-                
+            <div class="txt">Maze Complexity</div>
+            <input type="range" min="50" max="100" value="90" class="slider" id="complexitySlider"
+                onchange="createNewMaze()">
+            <br>
 
+            <select id="finderselect" class="select-css">
+                <option value="-1"> ..select a maze solver </option>
+                <option value="0">Simple Diffuse</option>
+                <option value="1">A* Pathfinder</option>
+                <option value="2">Maze Router</option>
+            </select>
+            <br>
+            <button id="generateButton" class="btn" color="white" onClick="createNewMaze()">GENERATE</button>
+            <br>
+
+
+        </div>
+
+        <div id="canvasContainer">
+            <span id="canvas1"></span>
+
+            <div class="txt" style="margin-top: 15px;">Solving speed</div>
+            <input type="range" min="0" max="100" value="0.5" class="slider" id="speedSlider">
+            <br>
+            <button id="solveButton" class="btn" color="white" onClick="startSolver()">SOLVE</button>
+            <div id="info">
+                <span class="txt" style="font-size: 15px;" id="length">-- <br> -- </span>
             </div>
-
-            <div id="canvasContainer" >
-                <span id="canvas1"></span>
-
-                <div class="txt" style="margin-top: 15px;">Solving speed</div>
-                <input type="range" min="0" max="100" value="0.5" class="slider" id="speedSlider">
-                <br>
-                <button id="solveButton" class="btn" color="white" onClick="startSolver()">SOLVE</button>
-                <div id="info">
-                    <span class="txt" style="font-size: 15px;" id="length">-- <br> -- </span>
-                </div>
-            </div>
+        </div>
 
 
 

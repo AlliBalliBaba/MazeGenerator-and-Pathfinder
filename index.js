@@ -1,24 +1,27 @@
 var currentMaze;
 var pathfinder;
-const pathfinders= [SimpleSolver,AStarSolver,MazeRouter];
+const pathfinders = [SimpleSolver, AStarSolver, MazeRouter];
 
 let canvas;
-var canvasX = 500, canvasY = 500;
+var canvasX = 500,
+    canvasY = 500;
 
-var mazeX = 50, mazeY = 50;
-var mazeStart = 3, mazeComplexity = 300;
+var mazeX = 50,
+    mazeY = 50;
+var mazeStart = 3,
+    mazeComplexity = 300;
 var gridSizeX, gridSizeY = 1;
-var solveCounter = 0, solveSpeed = 5, active = false;
-
-
+var solveCounter = 0,
+    solveSpeed = 5,
+    active = false;
 
 //set up canvas
 function setup() {
-    ReadHtmlValues();
-    if(screen.width-20< canvasX){
+    readHtmlValues();
+    if (screen.width - 20 < canvasX) {
         console.log(screen.width)
-        canvasX=screen.width-20;
-        canvasY=screen.width-20;
+        canvasX = screen.width - 20;
+        canvasY = screen.width - 20;
     }
     canvas = createCanvas(canvasX, canvasY);
     canvas.parent('canvas1');
@@ -55,14 +58,16 @@ function createNewMaze() {
 }
 
 function startSolver() {
-    let id=document.getElementById("finderselect").value;
-    if (id<0){ return; }
+    let id = document.getElementById("finderselect").value;
+    if (id < 0) {
+        return;
+    }
     document.getElementById("solveButton").disabled = true;
     pathfinder = new pathfinders[id](mazeStart, currentMaze.endPos);
     active = true;
 }
 
-function ReadHtmlValues() {
+function readHtmlValues() {
     mazeX = Math.floor(document.getElementById("sizeSlider").value);
     mazeY = Math.floor(document.getElementById("sizeSlider").value);
     mazeX > 75 ? shift = 1 : shift = 2;
