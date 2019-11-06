@@ -24,7 +24,7 @@
         <div class="container">
             <div class="smallbox">
                 <div class="txt">Maze Size</div>
-                <input type="range" min="10" max="100" value="25" class="slider" id="sizeSlider"
+                <input type="range" min="10" max="85" value="25" class="slider" id="sizeSlider"
                     onchange="createNewMaze()">
 
                 <div class="txt">Maze Complexity</div>
@@ -35,9 +35,7 @@
                 <button id="generateButton" class="btn" color="white" onClick="createNewMaze()">GENERATE</button>
             </div>
             <div class="smallbox">
-                <div class="txt" style="margin-top: 15px;">Solving speed</div>
-                <input type="range" min="0" max="100" value="5" class="slider" id="speedSlider">
-
+                
                 <select id="finderselect" class="select-css">
                     <option value="-1"> ..select a maze solver </option>
                     <option value="0">Simple Diffuse</option>
@@ -45,8 +43,11 @@
                     <option value="2">Maze Router</option>
                 </select>
 
+                <div class="txt" style="margin-top: 15px;">Solving speed</div>
+                <input type="range" min="0" max="100" value="5" class="slider" id="speedSlider">
+
                 <button id="solveButton" class="btn" color="white" onClick="startSolver()">SOLVE</button>
-                <button id="resetButton" class="btn" color="white" onClick="resetSolver()" disabled>RESET</button>
+                <button id="resetButton" class="btn" color="white" onClick="resetSolver()">RESET</button>
             </div>
 
         </div>

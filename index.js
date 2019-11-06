@@ -3,37 +3,27 @@ var pathfinder;
 const pathfinders = [SimpleSolver, AStarSolver, MazeRouter];
 
 let canvas;
-var canvasX = 500,
-    canvasY = 500;
+var canvasX = 500, canvasY = 500;
+var mazeX = 25, mazeY = 25;
+var startX = 0.5, startY = 0,
+    endX = 0.5, endY = mazeY - 1;
+var gridSizeX, gridSizeY;
 
-var mazeX = 25,
-    mazeY = 25;
-var startX = 0.5,
-    startY = 0,
-    endX = 0.5,
-    endY = mazeY - 1;
-mazeComplexity = 300;
-var gridSizeX, gridSizeY = 1;
-var solveCounter = 0,
+var mazeComplexity = 300,
+    solveCounter = 0,
     solveSpeed = 5,
     active = false;
 
 //set up canvas
 function setup() {
     readHtmlValues();
-    if (screen.width - 20 < canvasX) {
-        canvasX = screen.width - 20;
-        canvasY = screen.width - 20;
-    }
     canvas = createCanvas(canvasX, canvasY);
     canvas.parent('canvas1');
     background(245);
     gridSizeX = canvasX / mazeX;
     gridSizeY = canvasY / mazeY;
     active = false;
-    simplePathfinder = null;
-    aStarPathfinder = null;
-    mazePathfinder = null;
+    disableButton(true, "resetButton");
 }
 
 // function called every frame
@@ -62,10 +52,10 @@ function createNewMaze() {
 function startSolver() {
     let id = document.getElementById("finderselect").value;
     if (id < 0 || !currentMaze) return;
-    disableButton(true, "solveButton");
-    disableButton(false, "resetButton");
     pathfinder = new pathfinders[id](currentMaze.start, currentMaze.end);
     active = true;
+    disableButton(true, "solveButton");
+    disableButton(false, "resetButton");
 }
 
 function resetSolver() {
@@ -75,6 +65,7 @@ function resetSolver() {
     disableButton(true, "resetButton");
 }
 
+//on mouse click change maze entry points
 function mouseClicked() {
     if (mouseX > canvasX / mazeX && mouseX < canvasX - canvasX / mazeX && mouseY > 0 && mouseY < canvasY) {
         if (mouseY < canvasY / mazeY * 2) {
