@@ -7,11 +7,12 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js"></script>
     <script src="./lib/maze-node.js"></script>
+    <script src="./lib/pathfinder.js"></script>
     <script src="./lib/maze-generator.js"></script>
     <script src="./lib/finder-diffuse.js"></script>
     <script src="./lib/finder-astar.js"></script>
     <script src="./lib/finder-mazerouter.js"></script>
-    <script src="./lib/utility.js"></script>
+    <script src="./lib/utils.js"></script>
     <script src="./lib/draw.js"></script>
     <script src="./index.js"></script>
     <title>Maze Pathfinding</title>
@@ -21,42 +22,48 @@
     <h1 class="box">Maze Generator </h1>
     <div class="box flex" style="background: white;">
         <div class="container">
-            <div class="txt">Maze Size</div>
-            <input type="range" min="10" max="100" value="25" class="slider" id="sizeSlider" onchange="createNewMaze()">
+            <div class="smallbox">
+                <div class="txt">Maze Size</div>
+                <input type="range" min="10" max="100" value="25" class="slider" id="sizeSlider"
+                    onchange="createNewMaze()">
 
-            <div class="txt">Maze Complexity</div>
-            <input type="range" min="50" max="100" value="90" class="slider" id="complexitySlider"
-                onchange="createNewMaze()">
-            <br>
+                <div class="txt">Maze Complexity</div>
+                <input type="range" min="50" max="100" value="90" class="slider" id="complexitySlider"
+                    onchange="createNewMaze()">
+                <br>
 
-            <select id="finderselect" class="select-css">
-                <option value="-1"> ..select a maze solver </option>
-                <option value="0">Simple Diffuse</option>
-                <option value="1">A* Pathfinder</option>
-                <option value="2">Maze Router</option>
-            </select>
-            <br>
-            <button id="generateButton" class="btn" color="white" onClick="createNewMaze()">GENERATE</button>
-            <br>
+                <button id="generateButton" class="btn" color="white" onClick="createNewMaze()">GENERATE</button>
+            </div>
+            <div class="smallbox">
+                <div class="txt" style="margin-top: 15px;">Solving speed</div>
+                <input type="range" min="0" max="100" value="5" class="slider" id="speedSlider">
 
+                <select id="finderselect" class="select-css">
+                    <option value="-1"> ..select a maze solver </option>
+                    <option value="0">Simple Diffuse</option>
+                    <option value="1">A* Pathfinder</option>
+                    <option value="2">Maze Router</option>
+                </select>
+
+                <button id="solveButton" class="btn" color="white" onClick="startSolver()">SOLVE</button>
+                <button id="resetButton" class="btn" color="white" onClick="resetSolver()" disabled>RESET</button>
+            </div>
 
         </div>
 
         <div id="canvasContainer">
             <span id="canvas1"></span>
-
-            <div class="txt" style="margin-top: 15px;">Solving speed</div>
-            <input type="range" min="0" max="100" value="0.5" class="slider" id="speedSlider">
-            <br>
-            <button id="solveButton" class="btn" color="white" onClick="startSolver()">SOLVE</button>
             <div id="info">
                 <span class="txt" style="font-size: 15px;" id="length">-- <br> -- </span>
             </div>
+
         </div>
 
 
 
     </div>
+    <p style="text-align: center; max-width: 1200;">Generate a maze and choose a solver. Click on the top or the bottom
+        of the maze to change the entry points</p>
 </body>
 
 
